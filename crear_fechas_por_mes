@@ -1,0 +1,20 @@
+from datetime import datetime
+
+def get_date_by_month(year,month):
+    try:
+        hora=datetime.now().hour
+        minutos=datetime.now().minute
+        segundos=datetime.now().second
+        microsegundos=datetime.now().microsecond
+        date_string="1 "+month+", "+str(year)+" "+str(hora)+":"+str(minutos)+":"+str(segundos)+":"+str(microsegundos)
+        date_object = datetime.strptime(date_string, "%d %B, %Y %H:%M:%S:%f")
+        print(date_object)
+    except:
+        print(datetime.now())
+    
+get_date_by_month(2020,"September")
+get_date_by_month(2020,"Mayo")
+get_date_by_month(1990,"January")
+
+#la primera y tercera van ok
+#la segunda va al catch pues el mes esta en español
